@@ -4,11 +4,11 @@
    padding: 0;
    border: none;
 }
-body { 
-   background: #282a36;
-   color:#fff;
-}
 
+body {
+   font-size: 15px;
+   transition:all 800ms;
+}
 .next-player {
    text-align: center;
 }
@@ -37,13 +37,74 @@ body {
 .cell {
    color:#3380FF;
    font-size:32px;
-   border: 2px solid #fff;
    height:100px;
    width:100px;
    display: flex;
    justify-content: center;
    align-items: center;
 }
+
+
+
+.footer {
+   margin-top: 20px;  
+   text-align: center;
+   color:var(--white);
+}
+.footer a {
+   color: var(--blue)
+}
+
+
+.cilinder {
+   width:70px;
+   height:30px;
+   border-radius:50px;
+}
+
+.cilinder .circle {
+   background: gray;
+   height:20px;
+   width:45px;
+   border-radius:50px;
+   position:relative;
+   left:2px;
+   
+   transition:all 800ms;
+}
+
+.dark-theme {
+   background-color: #282a36;
+   color:#fff;
+}
+
+.light-theme .cell { 
+   border:2px solid #363636;
+}
+.light-theme {
+   background-color: white;
+}
+
+.light-theme button {
+   background-color:#363636;
+   color:#fff;
+}
+
+.light-theme .cilinder {
+   border:5px solid #363636;
+}
+.dark-theme .cilinder {
+   border:5px solid #fff;
+}
+.dark-theme .circle {
+   background:pink !important;
+   left:10px !important;
+}
+
+.dark-theme .cell { 
+   border:2px solid #fff;
+}
+
 
 .cell:nth-child(1),
 .cell:nth-child(2),

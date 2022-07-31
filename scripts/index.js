@@ -1,4 +1,6 @@
 import whoIsTheWinner from "./algoritm.js"
+
+const button = document.querySelector('.circle')
 const board = document.querySelector('.board')
 const divOfTheWinner = document.querySelector(".winner")
 const restartButton = document.querySelector(".restart")
@@ -7,6 +9,24 @@ let Player = "X"
 let game = []
 let counter = 0
 let winner = "None";
+let state = localStorage.getItem("isLightTheme") || false
+removeAndAddClasslist(document.body,"dark-theme","light-theme")
+
+button.addEventListener('click',e => {
+  changeTheme();
+})
+
+function changeTheme() {
+   state = !state
+   localStorage.setItem("isLightTheme", state)
+   if (state) return removeAndAddClasslist(document.body,"dark-theme","light-theme")
+   removeAndAddClasslist(document.body,"light-theme","dark-theme")
+}
+
+function removeAndAddClasslist(element,themeToRemove,themeToAdd) {
+   element.classList.remove(themeToRemove)
+   element.classList.add(themeToAdd)
+}
 restartButton.addEventListener("click",e => {
    game = []
    winner = 'None'
