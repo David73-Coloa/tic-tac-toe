@@ -49,10 +49,10 @@ body {
 .footer {
    margin-top: 20px;  
    text-align: center;
-   color:var(--white);
+   color:#fff;
 }
 .footer a {
-   color: var(--blue)
+    color:#3380FF;
 }
 
 
