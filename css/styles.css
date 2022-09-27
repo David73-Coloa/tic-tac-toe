@@ -33,6 +33,15 @@ body {
    border-radius: 15px;
    background:#FFD533;
 }
+.winner {
+   text-align: center;
+   margin: 0 auto;
+   background:#FFD533;
+   width:180px;
+   border-radius: 50px;
+   height: 40px;
+
+}
 
 .cell {
    color:#3380FF;
@@ -58,18 +67,18 @@ body {
 
 .cilinder {
    width:70px;
-   height:30px;
+   height:33px;
    border-radius:50px;
 }
 
 .cilinder .circle {
    background: gray;
    height:20px;
-   width:45px;
+   width:40px;
    border-radius:50px;
    position:relative;
    left:2px;
-   
+   bottom:2.5px;
    transition:all 800ms;
 }
 

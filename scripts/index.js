@@ -11,9 +11,11 @@ let counter = 0
 let winner = "None";
 let state = localStorage.getItem("isLightTheme") || false
 removeAndAddClasslist(document.body,"dark-theme","light-theme")
+setDivDisplayMessage("none","")
 
 button.addEventListener('click',e => {
-  changeTheme();
+   changeTheme();
+ 
 })
 
 function changeTheme() {
@@ -27,7 +29,13 @@ function removeAndAddClasslist(element,themeToRemove,themeToAdd) {
    element.classList.remove(themeToRemove)
    element.classList.add(themeToAdd)
 }
+function setDivDisplayMessage(display,message) {
+   divOfTheWinner.style.display = display
+   divOfTheWinner.innerText = message
+}
+
 restartButton.addEventListener("click",e => {
+   divOfTheWinner.style.display = "none"
    game = []
    winner = 'None'
    counter = 0
@@ -52,7 +60,7 @@ board.addEventListener('click',e => {
 		 game.push(cell.innerText)
 	  }
 	  winner = whoIsTheWinner(game);	  
-	  winner == "None"  ? game = [] : divOfTheWinner.innerText = `VENCEDOR: ${winner}`
-	  if (winner == "None" && counter == 9) divOfTheWinner.innerText = "VENCEDOR: NENHUM"
+	  winner == "None"  ? game = [] : setDivDisplayMessage("",`VENCEDOR: ${winner}`)
+	  if (winner == "None" && counter == 9) setDivDisplayMessage('', "VENCEDOR: NENHUM")
    } 
 })
